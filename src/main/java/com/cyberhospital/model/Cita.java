@@ -1,4 +1,4 @@
-package com.cyberhospital;
+package com.cyberhospital.model;
 
 import java.time.LocalDateTime;
 

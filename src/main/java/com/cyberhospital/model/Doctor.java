@@ -1,4 +1,4 @@
-package com.cyberhospital;
+package com.cyberhospital.model;
 
 public class Doctor {
     private String id;

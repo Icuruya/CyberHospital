@@ -1,5 +1,9 @@
-package com.cyberhospital;
+package com.cyberhospital.service;
 
+import com.cyberhospital.model.Administrador;
+import com.cyberhospital.model.Cita;
+import com.cyberhospital.model.Doctor;
+import com.cyberhospital.model.Paciente;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
@@ -72,4 +76,24 @@ public class CSVUtils {
             }
         }
     }
+
+    public static void guardarAdministradoresCSV(List<Administrador> administradores, String filePath) throws IOException {
+        try (CSVWriter writer = new CSVWriter(new FileWriter(filePath))) {
+            for (Administrador administrador : administradores) {
+                String[] data = {administrador.getUsuario(), administrador.getPassword()};
+                writer.writeNext(data);
+            }
+        }
+    }
+
+    public static void cargarAdministradoresCSV(List<Administrador> administradores, String filePath) throws IOException, CsvValidationException {
+        try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
+            String[] line;
+            while ((line = reader.readNext()) != null) {
+                Administrador administrador = new Administrador(line[0], line[1]);
+                administradores.add(administrador);
+            }
+        }
+    }
 }
+// Métodos existentes para guardar y cargar citas, doctores y pacientes
