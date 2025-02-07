@@ -34,6 +34,12 @@ Gestión de Doctores, Pacientes y Citas:
 
 Sigue las opciones del menú principal para dar de alta doctores y pacientes, y para crear y gestionar citas.
 
+2.5 **Compilar proyecyo utilizando Maven**
+-   mvn clean install
+-   Ejecutas programa
+-   mvn exec:java -Dexec.mainClass="com.cyberhospital.CyberHospital"
+
+
 3. **Creditos**
 
 Este proyecto fue desarrollado por Eduardo Garza Ovalle como parte de un trabajo universitario en la escuela Tecmilenio.
